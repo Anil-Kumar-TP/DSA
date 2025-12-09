@@ -1,0 +1,5 @@
+When you pass a primitive to a method, Java makes a copy of the value and sends that copy to the method.
+Inside the method, you're working with this duplicate. Any changes you make? They only affect the copy—not the original variable outside the method.
+Why? Primitives aren't references; they're just raw data. No memory address involved.
+
+

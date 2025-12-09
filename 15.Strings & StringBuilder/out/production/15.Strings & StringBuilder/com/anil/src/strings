@@ -1,0 +1,87 @@
+what is the diff btw these
+String name = "Anil"
+name = name + "Kumar"
+
+and
+String name = "Anil"
+name = "Kumar"
+
+
+
+🔹 Case 1:
+String name = "Anil";
+name = name + "Kumar";
+
+What happens:
+
+"Anil" is created in the String pool.
+
+Then name + "Kumar" creates a new String object "AnilKumar" in the heap (not the same pooled string), because string concatenation creates a new object.
+
+name now points to this new "AnilKumar" object.
+
+The original "Anil" string still exists in the pool but is no longer referenced by name.
+
+🧠 So, this creates a new object each time you concatenate — strings are immutable.
+
+
+
+Case 2:
+String name = "Anil";
+name = "Kumar";
+
+What happens:
+
+"Anil" and "Kumar" both exist in the String pool.
+
+Initially, name points to "Anil".
+
+When you reassign, name now points to the already pooled string "Kumar".
+
+No new object is created during this reassignment — just the reference changes.
+
+🧠 So, this only changes which pooled string the variable points to.
+
+
+“Immutable” doesn’t mean “you can’t change the variable.”
+
+It means you can’t change the actual String object in memory.
+
+When you do:
+
+String name = "Anil";
+name = name + "Kumar";
+
+
+you’re not changing the original "Anil" object.
+You’re creating a brand new String object "AnilKumar" and making name point to it.
+
+Think of it like this metaphor 👇
+
+Concept	Analogy
+name variable	A label stuck to a box
+String object	The box itself (contains characters)
+"Anil"	The first box
+"AnilKumar"	A new box created when you concatenate
+
+When you run name = name + "Kumar", you’re taking off the label from the first box and sticking it on a new box.
+The old box ("Anil") stays untouched — that’s what immutability means.
+
+🔹 To contrast with mutability
+
+If it were mutable (like a StringBuilder):
+
+StringBuilder sb = new StringBuilder("Anil");
+sb.append("Kumar");
+
+
+then the same object in memory gets modified — no new one is created.
+
+So:
+
+✅ You can change what the variable points to (the reference).
+
+❌ You cannot change the contents of the string object it originally pointed to.
+
+
+

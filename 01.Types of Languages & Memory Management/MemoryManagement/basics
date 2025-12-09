@@ -1,0 +1,4 @@
+Primitives: These are basic data types like int, double, char, boolean, etc. They store actual values directly (e.g., an int variable holds the number 5 itself). No objects involved here—they're not created with new.
+Objects: Things like arrays, custom classes, or String (which is a special built-in class). These are stored in heap memory, and you use reference variables (like pointers) to access them. For example: String s = "hello"; where s is a reference pointing to the "hello" object.
+
+Java is always pass-by-value for method parameters. That means methods get a copy of whatever you're passing—never the original. But the behavior feels different for primitives vs. objects because of what gets copied.

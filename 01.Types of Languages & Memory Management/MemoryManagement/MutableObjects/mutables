@@ -1,0 +1,2 @@
+For non-immutable objects (e.g., an ArrayList or your own class), passing a copy of the reference lets the method mutate the shared object.
+Example: If you have ArrayList<Integer> list = new ArrayList<>(); list.add(1);, and pass list to a method, the method can do copyRef.add(2); and the original list will see the change (now [1,2]). But you still can't reassign the original reference (e.g., copyRef = new ArrayList<>(); won't affect the caller's list).

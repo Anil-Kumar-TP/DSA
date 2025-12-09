@@ -1,0 +1,4 @@
+String is an object, not a primitive. So, variables like String s; are references that point to the actual string data in heap memory.
+When you pass a String to a method, Java passes a copy of the reference (not the object itself). Both the original and the copy point to the same object initially.
+But String is immutable—you can't change its content once created. "Modifying" a string (e.g., with concat() or toUpperCase()) actually creates a new String object and returns a reference to it.
+Crucially: You can't make the original reference point to a different object from inside the method, because you're working with a copy of the reference.
