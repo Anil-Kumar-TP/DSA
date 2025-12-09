@@ -3,6 +3,7 @@ package com.anil.src;
 import java.util.HashMap;
 import java.util.Map;
 
+//this is optimal for array with zeroes and negatives
 public class LongestSubarrayWithGivenSumKPositivesBetter {
     public static void main(String[] args) {
         int[] arr = {1,2,3,1,1,1,1,4,2,3};
@@ -25,8 +26,8 @@ public class LongestSubarrayWithGivenSumKPositivesBetter {
             if (map.containsKey(prefixSum - k)){
                 int prevIndex = map.get(prefixSum - k);
                 maxLength = Math.max(maxLength,i - prevIndex);
-            }
-
+            }//i - (prevIndex + 1) + 1
+//cus from prevIndex + 1 till i we find the subarray.now need its length.
             if (!map.containsKey(prefixSum)){
                 map.put(prefixSum,i);
             }
