@@ -43,3 +43,6 @@ public class MajorityElementOptimal {
         return -1;
     }
 }
+
+//
+//Every non-majority element can be paired and canceled with one majority element, but the majority element will still survive because it occurs more than all others combined.
