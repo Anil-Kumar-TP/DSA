@@ -1,0 +1,31 @@
+package com.anil.src;
+
+public class MiddleOfListBruteForce {
+
+    public class ListNode {
+      int val;
+      ListNode next;
+      ListNode() {}
+      ListNode(int val) { this.val = val; }
+      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
+    public ListNode middleNode(ListNode head) {
+
+        int length = 0;
+        ListNode temp = head;
+        while (temp != null){
+            length++;
+            temp = temp.next;
+        }
+
+        int middle = length / 2;
+
+        temp = head;
+        for (int i = 0; i < middle; i++){
+            temp = temp.next;
+        }
+
+        return temp;
+    }
+}
